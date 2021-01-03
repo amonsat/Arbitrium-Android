@@ -1,0 +1,3 @@
+[submodule "APK_Plugins/netbolt-orange-plugin"]
+	path = APK_Plugins/netbolt-orange-plugin
+	url = https://github.com/BenChaliah/cordova-shell-swissknife-plugin
