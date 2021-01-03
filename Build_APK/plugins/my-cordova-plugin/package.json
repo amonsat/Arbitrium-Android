@@ -1,0 +1,11 @@
+{
+  "name": "netbolt-orange-plugin",
+  "version": "1.0.0",
+  "cordova": {
+    "id": "netbolt-orange-plugin",
+    "platforms": [
+      "android"
+    ]
+  },
+  "description": "A starting point for netbolt"
+}

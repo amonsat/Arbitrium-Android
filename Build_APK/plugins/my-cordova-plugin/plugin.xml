@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="my-cordova-plugin"
+    version="1.0.0">
+    <name>Netbolt Orange Plugin</name>
+    <description></description>
+    <license>MIT</license>
+    <keywords></keywords>
+
+    <!-- android -->
+    <platform name="android">
+      <js-module src="www/plugin.js" name="plugin">
+        <runs/>
+
+        <!-- This is the window variable name you want, like window.MyOrangePlugin -->
+        <clobbers target="MyOrangePlugin" />
+      </js-module>
+      <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="MyOrangePlugin">
+          <param name="android-package" value="com.example.MyOrangePlugin" />
+          <param name="onload" value="true" />
+        </feature>
+      </config-file>
+
+      <source-file src="src/android/com/example/MyOrangePlugin.java" target-dir="src/com/example/" />
+    </platform>
+
+</plugin>
