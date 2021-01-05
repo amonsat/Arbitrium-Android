@@ -2,7 +2,7 @@
     "name": "net.orange.bolt",
     "displayName": "ArbitriumClient",
     "version": "1.0.0",
-    "description": "A sample Apache Cordova application that responds to the deviceready event.",
+    "description": "This is the android client/trojan, it's undetectable, can turn the target phone to a HTTP proxy and runs in the background permanently without being killed because of battery optimization's restrictions.",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +10,7 @@
     "keywords": [
         "ecosystem:cordova"
     ],
-    "author": "Apache Cordova Team",
+    "author": "BenChaliah",
     "license": "Apache-2.0",
     "dependencies": {
         "cordova-android": "^9.0.0",
