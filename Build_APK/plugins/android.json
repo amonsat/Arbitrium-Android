@@ -1,33 +1,33 @@
 {
-  "prepare_queue": {
-    "installed": [],
-    "uninstalled": []
-  },
-  "config_munge": {
-    "files": {}
-  },
-  "installed_plugins": {
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "net.orange.bolt"
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
     },
-    "my-cordova-plugin": {
-      "PACKAGE_NAME": "net.orange.bolt"
+    "config_munge": {
+        "files": {}
     },
-    "cordova-plugin-device": {
-      "PACKAGE_NAME": "net.orange.bolt"
+    "installed_plugins": {
+        "cordova-plugin-background-mode": {
+            "PACKAGE_NAME": "net.orange.bolt"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "net.orange.bolt"
+        },
+        "cordova-plugin-autostart": {
+            "PACKAGE_NAME": "net.orange.bolt"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "net.orange.bolt"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "net.orange.bolt"
+        },
+        "cordova-plugin-foreground-service": {
+            "PACKAGE_NAME": "net.orange.bolt"
+        },
+        "my-cordova-plugin": {
+            "PACKAGE_NAME": "net.orange.bolt"
+        }
     },
-    "cordova-plugin-background-mode": {
-      "PACKAGE_NAME": "net.orange.bolt"
-    },
-    "cordova-plugin-foreground-service": {
-      "PACKAGE_NAME": "net.orange.bolt"
-    },
-    "cordova-plugin-autostart": {
-      "PACKAGE_NAME": "net.orange.bolt"
-    },
-    "cordova-plugin-file": {
-      "PACKAGE_NAME": "net.orange.bolt"
-    }
-  },
-  "dependent_plugins": {}
+    "dependent_plugins": {}
 }

@@ -1,58 +1,31 @@
 {
-  "_from": "cordova-plugin-foreground-service",
-  "_id": "cordova-plugin-foreground-service@1.1.3",
-  "_inBundle": false,
-  "_integrity": "sha512-/C2Z8w9JIfAaLeXP290msQP9jcHR+CAJYbp6/x+mS21VtvS2Ug0upKsgjEzzSzRnt08Mr8kuwCV7juUd6eCWcw==",
-  "_location": "/cordova-plugin-foreground-service",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "tag",
-    "registry": true,
-    "raw": "cordova-plugin-foreground-service",
     "name": "cordova-plugin-foreground-service",
-    "escapedName": "cordova-plugin-foreground-service",
-    "rawSpec": "",
-    "saveSpec": null,
-    "fetchSpec": "latest"
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/cordova-plugin-foreground-service/-/cordova-plugin-foreground-service-1.1.3.tgz",
-  "_shasum": "06a7a7f52b2ec33c108dce2fd0fbe67f084abc8c",
-  "_spec": "cordova-plugin-foreground-service",
-  "_where": "/root/Apps/internetorange",
-  "author": {
-    "name": "David Briglio"
-  },
-  "bugs": {
-    "url": "https://github.com/DavidBriglio/cordova-plugin-foreground-service/issues"
-  },
-  "bundleDependencies": false,
-  "cordova": {
-    "id": "cordova-plugin-foreground-service",
-    "platforms": [
-      "android"
-    ]
-  },
-  "deprecated": false,
-  "description": "Foreground service with ongoing notification.",
-  "homepage": "https://github.com/DavidBriglio/cordova-plugin-foreground-service",
-  "keywords": [
-    "cordova",
-    "android",
-    "background",
-    "foreground",
-    "service",
-    "ecosystem:cordova",
-    "cordova-android"
-  ],
-  "license": "MIT",
-  "name": "cordova-plugin-foreground-service",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DavidBriglio/cordova-plugin-foreground-service.git"
-  },
-  "version": "1.1.3"
-}
+    "version": "1.1.3",
+    "description": "Foreground service with ongoing notification.",
+    "cordova": {
+      "id": "cordova-plugin-foreground-service",
+      "platforms": [
+        "android"
+      ]
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/DavidBriglio/cordova-plugin-foreground-service"
+    },
+    "keywords": [
+      "cordova",
+      "android",
+      "background",
+      "foreground",
+      "service",
+      "ecosystem:cordova",
+      "cordova-android"
+    ],
+    "author": "David Briglio",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/DavidBriglio/cordova-plugin-foreground-service/issues"
+    },
+    "homepage": "https://github.com/DavidBriglio/cordova-plugin-foreground-service"
+  }
+  

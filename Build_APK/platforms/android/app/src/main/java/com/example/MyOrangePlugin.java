@@ -52,9 +52,7 @@ public class MyOrangePlugin extends CordovaPlugin {
                                     String line = "";
                                     while ((line = reader.readLine()) != null) {
                                             output.append(line + "\n");
-                                            //p.waitFor();
                                     }
-                                    //exitStatus = p.exitValue();
                                     exitStatus = p.waitFor();
                             }
                             catch (IOException e) {
@@ -161,7 +159,6 @@ public class MyOrangePlugin extends CordovaPlugin {
     }
     return down_stat;
     }
-    
 
 
 }

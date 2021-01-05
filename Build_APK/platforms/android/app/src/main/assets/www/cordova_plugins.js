@@ -9,29 +9,12 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       ]
     },
     {
-      "id": "my-cordova-plugin.plugin",
-      "file": "plugins/my-cordova-plugin/www/plugin.js",
-      "pluginId": "my-cordova-plugin",
-      "clobbers": [
-        "MyOrangePlugin"
-      ],
-      "runs": true
-    },
-    {
       "id": "cordova-plugin-background-mode.BackgroundMode",
       "file": "plugins/cordova-plugin-background-mode/www/background-mode.js",
       "pluginId": "cordova-plugin-background-mode",
       "clobbers": [
         "cordova.plugins.backgroundMode",
         "plugin.backgroundMode"
-      ]
-    },
-    {
-      "id": "cordova-plugin-foreground-service.ForegroundService",
-      "file": "plugins/cordova-plugin-foreground-service/www/foreground.js",
-      "pluginId": "cordova-plugin-foreground-service",
-      "clobbers": [
-        "cordova.plugins.foregroundService"
       ]
     },
     {
@@ -214,15 +197,32 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
         "cordova"
       ],
       "runs": true
+    },
+    {
+      "id": "cordova-plugin-foreground-service.ForegroundService",
+      "file": "plugins/cordova-plugin-foreground-service/www/foreground.js",
+      "pluginId": "cordova-plugin-foreground-service",
+      "clobbers": [
+        "cordova.plugins.foregroundService"
+      ]
+    },
+    {
+      "id": "my-cordova-plugin.plugin",
+      "file": "plugins/my-cordova-plugin/www/plugin.js",
+      "pluginId": "my-cordova-plugin",
+      "clobbers": [
+        "MyOrangePlugin"
+      ],
+      "runs": true
     }
   ];
   module.exports.metadata = {
-    "cordova-plugin-whitelist": "1.3.4",
     "cordova-plugin-device": "2.0.3",
-    "my-cordova-plugin": "1.0.0",
     "cordova-plugin-background-mode": "0.7.3",
-    "cordova-plugin-foreground-service": "1.1.3",
+    "cordova-plugin-whitelist": "1.3.4",
     "cordova-plugin-autostart": "2.3.0",
-    "cordova-plugin-file": "6.0.2"
+    "cordova-plugin-file": "6.0.2",
+    "cordova-plugin-foreground-service": "1.1.3",
+    "my-cordova-plugin": "1.0.0"
   };
 });

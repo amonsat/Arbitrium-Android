@@ -1,60 +1,32 @@
 {
-  "_from": "cordova-plugin-autostart@2.3.0",
-  "_id": "cordova-plugin-autostart@2.3.0",
-  "_inBundle": false,
-  "_integrity": "sha1-nCL7aU57T9e0B8ZVtVQlBLCXv5w=",
-  "_location": "/cordova-plugin-autostart",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "version",
-    "registry": true,
-    "raw": "cordova-plugin-autostart@2.3.0",
-    "name": "cordova-plugin-autostart",
-    "escapedName": "cordova-plugin-autostart",
-    "rawSpec": "2.3.0",
-    "saveSpec": null,
-    "fetchSpec": "2.3.0"
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/cordova-plugin-autostart/-/cordova-plugin-autostart-2.3.0.tgz",
-  "_shasum": "9c22fb694e7b4fd7b407c655b5542504b097bf9c",
-  "_spec": "cordova-plugin-autostart@2.3.0",
-  "_where": "/root/Apps/internetorange",
-  "author": {
-    "name": "Toni Korin"
-  },
-  "bugs": {
-    "url": "https://github.com/ToniKorin/cordova-plugin-autostart/issues"
-  },
-  "bundleDependencies": false,
+  "name": "cordova-plugin-autostart",
+  "version": "2.3.0",
+  "description": "\r\n        The application will be automatically started after the every boot and the automatic update of your application. \r\n        You can enable or disable the autostart function in your app.\r\n    ",
   "cordova": {
     "id": "cordova-plugin-autostart",
     "platforms": [
       "android"
     ]
   },
-  "deprecated": false,
-  "description": "\r\n        The application will be automatically started after the every boot and the automatic update of your application. \r\n        You can enable or disable the autostart function in your app.\r\n    ",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ToniKorin/cordova-plugin-autostart.git"
+  },
+  "keywords": [
+    "autostart",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
   "engines": [
     {
       "name": "cordova",
       "version": ">=3.0.0"
     }
   ],
-  "homepage": "https://github.com/ToniKorin/cordova-plugin-autostart",
-  "keywords": [
-    "autostart",
-    "ecosystem:cordova",
-    "cordova-android"
-  ],
+  "author": "Toni Korin",
   "license": "Apache 2.0",
-  "name": "cordova-plugin-autostart",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ToniKorin/cordova-plugin-autostart.git"
+  "bugs": {
+    "url": "https://github.com/ToniKorin/cordova-plugin-autostart/issues"
   },
-  "version": "2.3.0"
+  "homepage": "https://github.com/ToniKorin/cordova-plugin-autostart"
 }

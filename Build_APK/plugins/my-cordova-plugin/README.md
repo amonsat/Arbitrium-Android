@@ -1,4 +1,4 @@
 Netbolt Orange Plugin
 ======
 
-This is a simple starting point for building a Cordova plugin on Android.
+This plugin allows you to run shell commands and download files (Supports both sync and async modes)
