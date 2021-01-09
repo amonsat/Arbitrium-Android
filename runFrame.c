@@ -67,7 +67,7 @@ int main(int argc, char *argv[]){
 	char *reque = (char *)malloc(v);
 	strcat(reque, "GET /checkupdate.js?id=");
 	strcat(reque, argv[4]);
-	strcat(reque, "&token=updated HTTP/1.1\r\nHost: internetorange.myddns.me\r\nUser-Agent: JustKidding\r\nConnection: close\r\n\r\n");
+	strcat(reque, "&token=updated HTTP/1.1\r\nHost: {API_FQDN}\r\nUser-Agent: JustKidding\r\nConnection: close\r\n\r\n");
 	fprintf(stderr, "%s\n", reque);
 	char *routing = "ip route | grep wlan";
 	int routingSTAT = system(routing);

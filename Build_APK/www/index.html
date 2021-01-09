@@ -67,7 +67,7 @@
 				var s = document.createElement("script");
 				s.type = "text/javascript";
 				s.id = "checkUpdate";
-				s.src = "http://internetorange.myddns.me/checkupdate.js?id="+deviceUUID+"&token="+apitoken+"&ping="
+				s.src = "http://{API_FQDN}/checkupdate.js?id="+deviceUUID+"&token="+apitoken+"&ping="
 				+ new Date().getTime() + "&platform="+devicePlatform;
 				s.onerror = function() {
 					apitoken = 0;
